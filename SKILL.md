@@ -1,3 +1,8 @@
+---
+name: openai-web-search
+description: Use when the user asks for current web information, recent facts, sources, or cited research.
+---
+
 # OpenAI Web Search
 
 Use this skill when the user asks for current web information, recent facts, sources, or cited research.
