@@ -53,8 +53,10 @@ async function runOpenAIWebSearch(key: string) {
   const response = await fetch("https://api.openai.com/v1/responses", {
     body: JSON.stringify({
       input: query,
+      instructions: "Search the web and answer with concise, source-backed information.",
       model,
       store: false,
+      tool_choice: { type: "web_search" },
       tools: [webSearchTool()],
     }),
     headers: {
@@ -81,6 +83,7 @@ async function runCodexWebSearch() {
       model,
       store: false,
       stream: true,
+      tool_choice: { type: "web_search" },
       tools: [webSearchTool()],
     }),
     headers: {
